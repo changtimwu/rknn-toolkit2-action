@@ -1,0 +1,12 @@
+# action.yml
+name: 'rknn-toolkit2 as action'
+description: 'provide rknn-toolkit2 environment to process input files from repo'
+inputs:
+  wkdir:
+    description: 'the directory to process'
+    default: 'mynet'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.wkdir }}
